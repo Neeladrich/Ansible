@@ -33,5 +33,5 @@
     - name: service start apache
       service: 
         name: apache
-        state: started
+        status: started
         enabled: yes 
