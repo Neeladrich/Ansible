@@ -4,6 +4,18 @@
   become: yes
 
   tasks:
+    - name: List listening ports and save to file
+      command: netstat -lutnp
+      register: port_output
+
+    - name: Save listening ports to file
+      copy:
+        content: "{{ port_output.stdout }}"
+        dest: /tmp/listening_ports.txt
+        owner: root
+        group: root
+        mode: '0644'
+      
     - name: latest updates 
       yum:
         name: "*"
