@@ -21,11 +21,11 @@
     copy: 
       content: 
         uptime:
-         {{uptime_before.stdout}}
+         {{ uptime_before.stdout }}
         kernal:
-         {{kernal_before.stdout}}
+         {{ kernal_before.stdout }}
         listening:
-         {{port_output.stdout}}
+         {{ port_output.stdout }}
 
       dest: /tmp/neeladri.txt
       owner: root
