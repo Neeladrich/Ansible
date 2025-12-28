@@ -8,8 +8,9 @@
   - name: uptime
     command: uptime
     register: uptime_before
+
   - name: get kernel version from node servers
-    command: uname -r $$ cat /etc/*se
+    command: uname -r
     register: skernal_before
 
   - name: listening ports
