@@ -5,12 +5,12 @@
 
   tasks:
 - name: istalling latest updates 
-  yum:
+  dnf:
     name: update
     state: latest
 
 - name: install httpd
-  yum:
+  dnf:
     name: httpd
     state: present
 
