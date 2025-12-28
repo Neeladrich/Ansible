@@ -3,23 +3,25 @@
   hosts: all
   become: yes
   gather_facts: yes
-  
-- name: get uptime from node servers
-  command: uptime
-  register: uptime_before
 
-- name: get kernel version from node servers
-  command: uname -r $$ cat /etc/*se
-  register: kernal_before
+  tasks:
 
-- name: listening ports
-  command: netstat -lutnp # ss -lutnp
-  register: port_output
+    - name: get uptime from node servers
+      command: uptime
+      register: uptime_before
 
-- name: listening port
-  copy: 
-    contest: "{{port_output.stdout}}"
-    dest: /tmp/neeladri.txt
-    owner: root
-    group: root
-    mode: "0644"
+    - name: get kernel version from node servers
+      command: uname -r $$ cat /etc/*se
+      register: kernal_before
+
+    - name: listening ports
+      command: netstat -lutnp # ss -lutnp
+      register: port_output
+
+    - name: listening port
+      copy: 
+        contest: "{{port_output.stdout}}"
+        dest: /tmp/neeladri.txt
+        owner: root
+        group: root
+        mode: "0644"
