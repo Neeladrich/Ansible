@@ -1,6 +1,6 @@
 ---
 - name: configure apache server
-  hosta: all
+  hosts: all
   become: true
 
   tasks:
