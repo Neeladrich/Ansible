@@ -11,7 +11,7 @@
 
   - name: get kernel version from node servers
     command: uname -r
-    register: skernal_before
+    register: kernal_before
 
   - name: listening ports
     command: netstat -lutnp # ss -lutnp
@@ -19,7 +19,7 @@
 
   - name: copy listening port_output
     copy: 
-      content: "{{ port_output.stdout }}"
+      content: "{{ port_output.stdout uptime_before.stdout kernal_before.stdoot }}"
       dest: /tmp/neeladri.txt
       owner: root
       group: root
