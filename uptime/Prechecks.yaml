@@ -19,7 +19,14 @@
 
   - name: copy listening port_output
     copy: 
-      content: "{{ 'port_output.stdout' 'uptime_before.stdout' 'kernal_before.stdoot' }}"
+      content: 
+        uptime:
+         {{uptime_before.stdout}}
+        kernal:
+         {{kernal_before.stdout}}
+        listening:
+         {{port_output.stdout}}
+
       dest: /tmp/neeladri.txt
       owner: root
       group: root
