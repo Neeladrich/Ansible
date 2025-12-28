@@ -1,4 +1,9 @@
 ---
+- name: Prechecks for patching
+  hosts: all
+  become: yes
+  gather_facts: yes
+  
 - name: get uptime from node servers
   command: uptime
   register: uptime_before
