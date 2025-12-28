@@ -19,7 +19,7 @@
 
   - name: copy listening port_output
     copy: 
-      content: 
+      content: |
         uptime:
          {{ uptime_before.stdout }}
         kernal:
