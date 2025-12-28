@@ -4,7 +4,7 @@
   become: yes
 
   tasks:
-- name: istalling latest updates 
+- name: latest updates 
   yum:
     name: "*"
     state: latest
