@@ -30,8 +30,8 @@
         state: present
       when: ansible_os_family=='ubuntu'
 
-    - name: service start apache
-      service: 
-        name: apache
-        state: daemon-reload
-        enabled: yes 
+    # - name: service start apache
+    #   service: 
+    #     name: apache
+    #     state: started
+    #     enabled: yes
