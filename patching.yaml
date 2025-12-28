@@ -6,7 +6,7 @@
   tasks:
 - name: istalling latest updates 
   yum:
-    name: update
+    name: "*"
     state: latest
 
 - name: install httpd
