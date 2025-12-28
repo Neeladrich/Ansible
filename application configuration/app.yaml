@@ -1,0 +1,37 @@
+---
+- name: configure apache server
+  hosta: all
+  become: true
+
+  tasks:
+    - name: install httpd in RHEL
+      yum:
+        name: httpd
+        state: present
+      when: ansible_os_family=='RedHat'
+
+    - name: copy configuration file in html folder 
+      copy:
+        src: index.html
+        dest: /var/www/html/index.html
+        owner: root
+        group: root
+        mode: "0644"
+
+    - name: start services
+      service:
+        name: httpd
+        state: started
+        enabled: yes
+      
+    - name: install apache ubuntu
+      apt: 
+        name: apache
+        state: present
+      when: ansible_os_family=='Ubuntu'
+
+    - name: service start apache
+      service: 
+        name: apache
+        state: started
+        enabled: yes 
