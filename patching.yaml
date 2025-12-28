@@ -1,0 +1,11 @@
+---
+- name: os patching
+  hosts: all
+  become: yes
+
+  tasks:
+- name: istalling latest updates 
+  yum:
+    name: update
+    state: latest
+    
