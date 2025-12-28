@@ -5,7 +5,7 @@
 
   tasks:
 - name: istalling latest updates 
-  dnf:
+  yum:
     name: update
     state: latest
 
