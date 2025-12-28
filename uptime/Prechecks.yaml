@@ -17,9 +17,9 @@
     command: netstat -lutnp # ss -lutnp
     register: port_output
 
-  - name: listening port
+  - name: copy listening port_output
     copy: 
-      contest: "{{port_output.stdout}}"
+      contest: "{{ port_output.stdout }}"
       dest: /tmp/neeladri.txt
       owner: root
       group: root
