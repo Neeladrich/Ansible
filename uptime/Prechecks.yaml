@@ -18,8 +18,8 @@
 
   - name: listening port
     copy: 
-    contest: "{{port_output.stdout}}"
-    dest: /tmp/neeladri.txt
-    owner: root
-    group: root
-    mode: "0644"
+      contest: "{{port_output.stdout}}"
+      dest: /tmp/neeladri.txt
+      owner: root
+      group: root
+      mode: "0644"
