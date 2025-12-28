@@ -33,5 +33,5 @@
     - name: service start apache
       service: 
         name: apache
-        status: started
+        state: daemon-reload
         enabled: yes 
