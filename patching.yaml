@@ -8,4 +8,13 @@
   yum:
     name: update
     state: latest
-    
+
+- name: install httpd
+  yum:
+    name: httpd
+    state: present
+
+- name: service restart
+  service:
+    name: httpd
+    state: restarted
